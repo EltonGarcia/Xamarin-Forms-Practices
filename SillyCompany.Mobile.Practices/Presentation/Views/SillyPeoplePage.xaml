@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 
 <ContentPage
     x:Class="SillyCompany.Mobile.Practices.Presentation.Views.SillyPeoplePage"
@@ -18,6 +18,31 @@
     Title="{loc:Translate SillyPeople_Title}"
     d:DataContext="{d:DesignInstance vm:SillyPeopleVm}"
     mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+             <DataTemplate x:Key="DefaultSillyDataTemplate">
+                <ViewCell>
+                    <views:SillySquareCell
+                        effects:TapCommandEffect.Tap="{Binding OnItemTappedCommand}"
+                        effects:TapCommandEffect.TapParameter="{Binding .}"
+                        effects:ViewEffect.TouchFeedbackColor="{StaticResource Accent}" />
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="FavoriteSillyDataTemplate">
+                <ViewCell>
+                    <views:SillySquareCell
+                        BackgroundColor="Yellow"
+                        effects:TapCommandEffect.Tap="{Binding OnItemTappedCommand}"
+                        effects:TapCommandEffect.TapParameter="{Binding .}"
+                        effects:ViewEffect.TouchFeedbackColor="{StaticResource Accent}" />
+                </ViewCell>
+            </DataTemplate>
+            <views:FavoriteSillyDudeTemplateSelector 
+                x:Key="FavoriteDudeTemplateSelector"
+                FavoriteSillySquare="{StaticResource FavoriteSillyDataTemplate}"
+                DefaultSillySquare="{StaticResource DefaultSillyDataTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
@@ -189,17 +214,8 @@
                             ScrollBeganCommand="{Binding OnScrollBeginCommand}"
                             ScrollEndedCommand="{Binding OnScrollEndCommand}"
                             SnapStyle="Center"
-                            VerticalOptions="Start">
-                            <renderedViews:HorizontalListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <views:SillySquareCell
-                                            effects:TapCommandEffect.Tap="{Binding OnItemTappedCommand}"
-                                            effects:TapCommandEffect.TapParameter="{Binding .}"
-                                            effects:ViewEffect.TouchFeedbackColor="{StaticResource Accent}" />
-                                    </ViewCell>
-                                </DataTemplate>
-                            </renderedViews:HorizontalListView.ItemTemplate>
+                            VerticalOptions="Start"
+                            ItemTemplate="{StaticResource FavoriteDudeTemplateSelector}">
                         </renderedViews:HorizontalListView>
 
                     </Grid>

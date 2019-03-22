@@ -6,7 +6,7 @@ namespace SillyCompany.Mobile.Practices.Domain.Silly
     {
         private readonly string _realName;
 
-        public SillyDude(int id, string name, string role, string description, string imageUrl, int sillinessDegree, string filmoMarkdown, string memeUrl, string sourceUrl = null)
+        public SillyDude(int id, string name, string role, string description, string imageUrl, int sillinessDegree, string filmoMarkdown, string memeUrl, string sourceUrl = null, bool isFavorite = false)
         {
             if (sillinessDegree > 5 || sillinessDegree < 0)
             {
@@ -22,6 +22,7 @@ namespace SillyCompany.Mobile.Practices.Domain.Silly
             SourceUrl = sourceUrl;
             FilmoMarkdown = filmoMarkdown;
             MemeUrl = memeUrl;
+            IsFavorite = isFavorite;
         }
 
         public int Id { get; }
@@ -47,6 +48,8 @@ namespace SillyCompany.Mobile.Practices.Domain.Silly
         public string FilmoMarkdown { get; set; }
 
         public string MemeUrl { get; }
+
+        public bool IsFavorite { get; set; }
 
         public SillyDude Clone(int id)
         {

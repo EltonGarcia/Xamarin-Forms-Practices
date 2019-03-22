@@ -63,7 +63,8 @@ namespace SillyCompany.Mobile.Practices.Domain.Silly
                             5,
                             "ni!",
                             "http://www.quickmeme.com/img/e8/e835352f2b7cd21efc12eba56c0d5a3e00c411965b029126cb5eb360fcfa6eb5.jpg",
-                            "https://www.youtube.com/watch?v=zIV4poUZAQo")
+                            "https://www.youtube.com/watch?v=zIV4poUZAQo",
+                            true)
                     },
                     {
                         ++_peopleCounter,
@@ -111,7 +112,8 @@ namespace SillyCompany.Mobile.Practices.Domain.Silly
                             2,
                             Filmos.Triumph,
                             "http://2.bp.blogspot.com/-sPduDIOi2-U/UR3Bpkjn0jI/AAAAAAAAGlo/SnSOI-tYyqo/s1600/PoopBoatTriumph.jpg",
-                            "https://youtu.be/O-253uBJap8?t=315")
+                            "https://youtu.be/O-253uBJap8?t=315",
+                            true)
                     },
                     {
                         ++_peopleCounter,
@@ -144,7 +146,8 @@ namespace SillyCompany.Mobile.Practices.Domain.Silly
                             3,
                             Filmos.Carell,
                             "https://sayingimages.com/wp-content/uploads/fool-me-once-michael-scott-memes-1.jpg",
-                            "https://youtu.be/N9Z4vqysxMQ?t=92")
+                            "https://youtu.be/N9Z4vqysxMQ?t=92",
+                            true)
                     },
                     {
                         ++_peopleCounter,
@@ -178,7 +181,8 @@ namespace SillyCompany.Mobile.Practices.Domain.Silly
                             3,
                             Filmos.Moss,
                             "https://images1.memedroid.com/images/UPLOADED8/501f9cd68575e.jpeg",
-                            "https://youtu.be/NKHyqjHqQLU?t=32")
+                            "https://youtu.be/NKHyqjHqQLU?t=32",
+                            true)
                     },
                     {
                         ++_peopleCounter,

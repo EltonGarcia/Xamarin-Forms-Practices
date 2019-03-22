@@ -24,6 +24,7 @@ namespace SillyCompany.Mobile.Practices.Presentation.ViewModels
             ImageUrl = dude.ImageUrl;
             SillinessDegree = dude.SillinessDegree;
             SourceUrl = dude.SourceUrl;
+            IsFavorite = dude.IsFavorite;
 
             OnItemTappedCommand = onItemTappedCommand;
         }
@@ -45,5 +46,7 @@ namespace SillyCompany.Mobile.Practices.Presentation.ViewModels
         public int SillinessDegree { get; }
 
         public string SourceUrl { get; }
+
+        public bool IsFavorite { get; }
     }
 }
